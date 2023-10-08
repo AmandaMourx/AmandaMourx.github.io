@@ -7,45 +7,68 @@
 .hero{
     height: 100vh;
     width: 100%;
-    background-image: url(/resources/images/space.png);
+    background-image: url(../images/space.png);
     background-size: cover;
     background-position: bottom;
 }
 
 nav{
+
+    width: 100%; /* Set the width of the navigation bar */
+    height: 12%; /* Make it cover the entire height of the page */
+    position: fixed;
+    background: linear-gradient(to left, #922121, #000);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 45px;
-    padding-left: 8%;
-    padding-right: 8%;
-    
+    justify-content: center;
+    z-index: 1000; /* Set a high z-index value to make the navbar appear above other content */
 }
 .logo{
+    /*color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer; */
+
     color: white;
     font-size: 35px;
     letter-spacing: 1px;
-    cursor: pointer;
+    margin-left: 0;
+    margin-right: 57%;
+
+    
+    
 }
 span{
     color: #e9214a;
 }
-nav ul li{
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px 35px;
-    font-size: 22px;
+nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    
 }
+nav ul li {
+    flex-direction: column; /* Arrange the items vertically */
+    width: 100%; /* Set the width of list items to 100% */
+    margin-right: 5%;
+}
+
 nav ul li a{
-   color: white;
-   text-decoration: none;
-   font-weight: bold;
-   text-transform: capitalize;
+    text-align: center;
+    font-size: 20px;
+    color: #e8e8e8;
+    text-decoration: none;
+    white-space: nowrap;
 }
 nav ul li a:hover{
     color: #e9214a;
     transition: .3s;
 }
+
 .content{
     position: absolute;
     top: 50%;
@@ -72,10 +95,25 @@ h4{
     font-size: 50px;
     display: block;
     text-align:center;
-    margin-left: 6%;
+    margin-left: 83%;
     color: white;
-    padding-top: 40%;
+    padding-top: 43%;
+    animation: bounce 2s infinite;
+    transition: transform 0.2s ease-in-out;
 }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100%{
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px); /* Adjust the bounce height as needed */
+    }
+    60% {
+        transform: translateY(-10px); /* Adjust the bounce height as needed */
+    }
+}
+
 .about{
     width: 100%;
     padding: 100px 0px;
